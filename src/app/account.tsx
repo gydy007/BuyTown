@@ -1,44 +1,56 @@
-import React, { useState } from 'react';
+import { Colors, Shadows } from "@/constants/theme";
+import { Feather, Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
+import { useState } from "react";
 import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  ScrollView,
+  Alert,
   Image,
   Platform,
-  Alert,
-} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons, Feather } from '@expo/vector-icons';
-import { router } from 'expo-router';
-import { Colors, Shadows } from '@/constants/theme';
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AccountScreen() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
-      Alert.alert('Search', `Searching BuyTown for: "${searchQuery}"`);
+      Alert.alert("Search", `Searching BuyTown for: "${searchQuery}"`);
     }
   };
 
   const handleVoiceSearch = () => {
-    Alert.alert('Voice Search', 'Listening... Speak what you are looking for on BuyTown.');
+    Alert.alert(
+      "Voice Search",
+      "Listening... Speak what you are looking for on BuyTown.",
+    );
   };
 
   const handleReconnectWallet = () => {
-    Alert.alert('BuyTown Wallet', 'Reconnecting your secured wallet provider...');
+    Alert.alert(
+      "BuyTown Wallet",
+      "Reconnecting your secured wallet provider...",
+    );
   };
 
   const handleLiveChat = () => {
-    Alert.alert('BuyTown Support', 'Connecting you to a 24/7 Live Support Agent...');
+    Alert.alert(
+      "BuyTown Support",
+      "Connecting you to a 24/7 Live Support Agent...",
+    );
   };
 
   const handleWhatsApp = () => {
-    Alert.alert('WhatsApp Support', 'Opening BuyTown Official WhatsApp Business Chat...');
+    Alert.alert(
+      "WhatsApp Support",
+      "Opening BuyTown Official WhatsApp Business Chat...",
+    );
   };
 
   const handleNavigationItem = (title: string) => {
@@ -47,34 +59,37 @@ export default function AccountScreen() {
 
   const handleLogout = () => {
     Alert.alert(
-      'Logout',
-      'Are you sure you want to log out of your BuyTown account?',
+      "Logout",
+      "Are you sure you want to log out of your BuyTown account?",
       [
-        { text: 'Cancel', style: 'cancel' },
+        { text: "Cancel", style: "cancel" },
         {
-          text: 'Logout',
-          style: 'destructive',
+          text: "Logout",
+          style: "destructive",
           onPress: () => {
-            router.push('/login');
+            router.push("/login");
           },
         },
-      ]
+      ],
     );
   };
 
   const handleCloseAccount = () => {
     Alert.alert(
-      'Close Account',
-      'Closing your account will permanently remove your orders, wishlist, and wallet vouchers. Are you sure?',
+      "Close Account",
+      "Closing your account will permanently remove your orders, wishlist, and wallet vouchers. Are you sure?",
       [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Proceed', style: 'destructive' },
-      ]
+        { text: "Cancel", style: "cancel" },
+        { text: "Proceed", style: "destructive" },
+      ],
     );
   };
 
   return (
-    <SafeAreaView style={styles.safeArea} edges={['top', 'bottom', 'left', 'right']}>
+    <SafeAreaView
+      style={styles.safeArea}
+      edges={["top", "bottom", "left", "right"]}
+    >
       {/* SCROLLABLE MAIN CONTENT */}
       <ScrollView
         style={styles.scrollView}
@@ -91,7 +106,11 @@ export default function AccountScreen() {
               end={{ x: 1, y: 1 }}
               style={styles.logoBadge}
             >
-              <Ionicons name="bag-handle" size={20} color={Colors.textInverse} />
+              <Ionicons
+                name="bag-handle"
+                size={20}
+                color={Colors.textInverse}
+              />
             </LinearGradient>
 
             <View style={styles.logoTextContainer}>
@@ -109,17 +128,21 @@ export default function AccountScreen() {
               accessibilityRole="button"
               accessibilityLabel="Search"
             >
-              <Ionicons name="search-outline" size={21} color={Colors.textPrimary} />
+              <Ionicons
+                name="search-outline"
+                size={21}
+                color={Colors.textPrimary}
+              />
             </TouchableOpacity>
 
             <TouchableOpacity
               activeOpacity={0.8}
-              onPress={() => handleNavigationItem('Profile Details')}
+              onPress={() => handleNavigationItem("Profile Details")}
               accessibilityRole="button"
               accessibilityLabel="View profile"
             >
               <Image
-                source={require('@/assets/images/user-avatar.jpg')}
+                source={require("@/assets/images/user-avatar.jpg")}
                 style={styles.headerAvatar}
               />
             </TouchableOpacity>
@@ -128,7 +151,12 @@ export default function AccountScreen() {
 
         {/* SEARCH INPUT BAR */}
         <View style={styles.searchBarContainer}>
-          <Ionicons name="search-outline" size={18} color="#8E98A8" style={styles.searchLeftIcon} />
+          <Ionicons
+            name="search-outline"
+            size={18}
+            color="#8E98A8"
+            style={styles.searchLeftIcon}
+          />
           <TextInput
             style={styles.searchInput}
             placeholder="Search on BuyTown"
@@ -155,7 +183,7 @@ export default function AccountScreen() {
           <View style={styles.profileRow}>
             <View style={styles.avatarWrapper}>
               <Image
-                source={require('@/assets/images/user-avatar.jpg')}
+                source={require("@/assets/images/user-avatar.jpg")}
                 style={styles.profileAvatar}
               />
               {/* Green Verified Checkmark Badge */}
@@ -179,7 +207,11 @@ export default function AccountScreen() {
           <View style={styles.walletStrip}>
             <View style={styles.walletLeft}>
               <View style={styles.walletIconBadge}>
-                <Ionicons name="wallet-outline" size={18} color={Colors.brandTeal} />
+                <Ionicons
+                  name="wallet-outline"
+                  size={18}
+                  color={Colors.brandTeal}
+                />
               </View>
               <View style={styles.walletTextContainer}>
                 <Text style={styles.walletTitle}>BUYTOWN WALLET</Text>
@@ -210,7 +242,12 @@ export default function AccountScreen() {
               accessibilityRole="button"
               accessibilityLabel="Live Chat"
             >
-              <Ionicons name="chatbubbles" size={17} color="#FFFFFF" style={styles.actionButtonIcon} />
+              <Ionicons
+                name="chatbubbles"
+                size={17}
+                color="#FFFFFF"
+                style={styles.actionButtonIcon}
+              />
               <Text style={styles.actionButtonText}>Live Chat</Text>
             </TouchableOpacity>
 
@@ -222,7 +259,12 @@ export default function AccountScreen() {
               accessibilityRole="button"
               accessibilityLabel="WhatsApp"
             >
-              <Ionicons name="logo-whatsapp" size={17} color="#FFFFFF" style={styles.actionButtonIcon} />
+              <Ionicons
+                name="logo-whatsapp"
+                size={17}
+                color="#FFFFFF"
+                style={styles.actionButtonIcon}
+              />
               <Text style={styles.actionButtonText}>WhatsApp</Text>
             </TouchableOpacity>
           </View>
@@ -233,12 +275,16 @@ export default function AccountScreen() {
           <Text style={styles.sectionHeader}>NEED ASSISTANCE?</Text>
           <TouchableOpacity
             style={styles.singleItemCard}
-            onPress={() => handleNavigationItem('Help & Support')}
+            onPress={() => handleNavigationItem("Help & Support")}
             activeOpacity={0.7}
           >
             <View style={styles.itemLeft}>
               <View style={styles.itemIconCircle}>
-                <Ionicons name="help-circle-outline" size={19} color={Colors.textPrimary} />
+                <Ionicons
+                  name="help-circle-outline"
+                  size={19}
+                  color={Colors.textPrimary}
+                />
               </View>
               <Text style={styles.itemTitle}>Help & Support</Text>
             </View>
@@ -253,12 +299,16 @@ export default function AccountScreen() {
             {/* Orders */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Orders')}
+              onPress={() => handleNavigationItem("Orders")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="cube-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="cube-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Orders</Text>
               </View>
@@ -273,7 +323,7 @@ export default function AccountScreen() {
             {/* Inbox */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Inbox')}
+              onPress={() => handleNavigationItem("Inbox")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
@@ -293,12 +343,16 @@ export default function AccountScreen() {
             {/* Ratings & Reviews */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Ratings & Reviews')}
+              onPress={() => handleNavigationItem("Ratings & Reviews")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="chatbox-outline" size={17} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="chatbox-outline"
+                    size={17}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Ratings & Reviews</Text>
               </View>
@@ -308,12 +362,16 @@ export default function AccountScreen() {
             {/* Vouchers */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Vouchers')}
+              onPress={() => handleNavigationItem("Vouchers")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="ticket-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="ticket-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Vouchers</Text>
               </View>
@@ -328,12 +386,16 @@ export default function AccountScreen() {
             {/* Wishlist */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Wishlist')}
+              onPress={() => handleNavigationItem("Wishlist")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="heart-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="heart-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Wishlist</Text>
               </View>
@@ -343,12 +405,16 @@ export default function AccountScreen() {
             {/* Follow Seller */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Follow Seller')}
+              onPress={() => handleNavigationItem("Follow Seller")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="storefront-outline" size={17} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="storefront-outline"
+                    size={17}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Follow Seller</Text>
               </View>
@@ -358,12 +424,16 @@ export default function AccountScreen() {
             {/* Recently Viewed */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Recently Viewed')}
+              onPress={() => handleNavigationItem("Recently Viewed")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="time-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="time-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Recently Viewed</Text>
               </View>
@@ -379,12 +449,16 @@ export default function AccountScreen() {
             {/* Address Book */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Address Book')}
+              onPress={() => handleNavigationItem("Address Book")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="location-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="location-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Address Book</Text>
               </View>
@@ -394,12 +468,16 @@ export default function AccountScreen() {
             {/* Account Management */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Account Management')}
+              onPress={() => handleNavigationItem("Account Management")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="person-circle-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="person-circle-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Account Management</Text>
               </View>
@@ -409,12 +487,16 @@ export default function AccountScreen() {
             {/* Notification Preferences */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Notification Preferences')}
+              onPress={() => handleNavigationItem("Notification Preferences")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="notifications-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="notifications-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Notification Preferences</Text>
               </View>
@@ -424,12 +506,16 @@ export default function AccountScreen() {
             {/* Privacy Policy */}
             <TouchableOpacity
               style={styles.groupItem}
-              onPress={() => handleNavigationItem('Privacy Policy')}
+              onPress={() => handleNavigationItem("Privacy Policy")}
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
                 <View style={styles.itemIconCircle}>
-                  <Ionicons name="shield-outline" size={18} color={Colors.textPrimary} />
+                  <Ionicons
+                    name="shield-outline"
+                    size={18}
+                    color={Colors.textPrimary}
+                  />
                 </View>
                 <Text style={styles.itemTitle}>Privacy Policy</Text>
               </View>
@@ -443,10 +529,18 @@ export default function AccountScreen() {
               activeOpacity={0.7}
             >
               <View style={styles.itemLeft}>
-                <View style={[styles.itemIconCircle, styles.closeAccountCircle]}>
-                  <Ionicons name="ban-outline" size={18} color={Colors.dangerText} />
+                <View
+                  style={[styles.itemIconCircle, styles.closeAccountCircle]}
+                >
+                  <Ionicons
+                    name="ban-outline"
+                    size={18}
+                    color={Colors.dangerText}
+                  />
                 </View>
-                <Text style={[styles.itemTitle, styles.closeAccountTitle]}>Close Account</Text>
+                <Text style={[styles.itemTitle, styles.closeAccountTitle]}>
+                  Close Account
+                </Text>
               </View>
               <Ionicons name="chevron-forward" size={16} color="#8E98A8" />
             </TouchableOpacity>
@@ -461,7 +555,12 @@ export default function AccountScreen() {
           accessibilityRole="button"
           accessibilityLabel="Logout"
         >
-          <Ionicons name="log-out-outline" size={19} color={Colors.primary} style={styles.logoutIcon} />
+          <Ionicons
+            name="log-out-outline"
+            size={19}
+            color={Colors.primary}
+            style={styles.logoutIcon}
+          />
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
 
@@ -474,7 +573,7 @@ export default function AccountScreen() {
         {/* Tab 1: Home */}
         <TouchableOpacity
           style={styles.tabItem}
-          onPress={() => router.push('/home')}
+          onPress={() => router.push("/home")}
           activeOpacity={0.7}
         >
           <Ionicons name="home-outline" size={22} color="#6B7280" />
@@ -484,7 +583,7 @@ export default function AccountScreen() {
         {/* Tab 2: Categories */}
         <TouchableOpacity
           style={styles.tabItem}
-          onPress={() => Alert.alert('Categories', 'Browsing product categories...')}
+          onPress={() => router.push("/categories")}
           activeOpacity={0.7}
         >
           <Ionicons name="grid-outline" size={22} color="#6B7280" />
@@ -494,7 +593,9 @@ export default function AccountScreen() {
         {/* Tab 3: Cart */}
         <TouchableOpacity
           style={styles.tabItem}
-          onPress={() => Alert.alert('Cart', 'Your shopping cart is currently empty.')}
+          onPress={() =>
+            Alert.alert("Cart", "Your shopping cart is currently empty.")
+          }
           activeOpacity={0.7}
         >
           <Ionicons name="bag-handle-outline" size={22} color="#6B7280" />
@@ -521,53 +622,53 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: 16,
-    paddingTop: Platform.OS === 'android' ? 10 : 4,
+    paddingTop: Platform.OS === "android" ? 10 : 4,
     paddingBottom: 24,
     maxWidth: 520,
-    alignSelf: 'center',
-    width: '100%',
+    alignSelf: "center",
+    width: "100%",
   },
 
   /* HEADER */
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginBottom: 14,
     paddingHorizontal: 2,
   },
   logoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   logoBadge: {
     width: 38,
     height: 38,
     borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     ...Shadows.subtle,
   },
   logoTextContainer: {
     marginLeft: 9,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   brandTitle: {
     fontSize: 17,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.textPrimary,
     letterSpacing: -0.2,
   },
   brandSubtitle: {
     fontSize: 10,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.textMuted,
     letterSpacing: 0.9,
     marginTop: 1,
   },
   headerRightActions: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   headerIconButton: {
     padding: 6,
@@ -578,7 +679,7 @@ const styles = StyleSheet.create({
     height: 34,
     borderRadius: 17,
     borderWidth: 1.5,
-    borderColor: '#FFFFFF',
+    borderColor: "#FFFFFF",
   },
 
   /* SEARCH BAR */
@@ -588,8 +689,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surfaceSubtle,
     borderWidth: 1,
     borderColor: Colors.borderDefault,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     paddingHorizontal: 14,
     marginBottom: 16,
   },
@@ -598,7 +699,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    height: '100%',
+    height: "100%",
     fontSize: 14,
     color: Colors.textPrimary,
     padding: 0,
@@ -614,16 +715,16 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#EEF1F6',
+    borderColor: "#EEF1F6",
     marginBottom: 8,
     ...Shadows.card,
   },
   profileRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   avatarWrapper: {
-    position: 'relative',
+    position: "relative",
     marginRight: 12,
   },
   profileAvatar: {
@@ -632,28 +733,28 @@ const styles = StyleSheet.create({
     borderRadius: 28,
   },
   verifiedCheckBadge: {
-    position: 'absolute',
+    position: "absolute",
     bottom: -2,
     right: -2,
     width: 18,
     height: 18,
     borderRadius: 9,
-    backgroundColor: '#059669',
+    backgroundColor: "#059669",
     borderWidth: 2,
-    borderColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderColor: "#FFFFFF",
+    alignItems: "center",
+    justifyContent: "center",
   },
   profileInfo: {
     flex: 1,
   },
   nameRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   welcomeName: {
     fontSize: 17.5,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.textPrimary,
     marginRight: 6,
   },
@@ -665,30 +766,30 @@ const styles = StyleSheet.create({
   },
   vipText: {
     fontSize: 10.5,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.badgeVipText,
   },
   userEmail: {
     fontSize: 13,
-    fontWeight: '500',
+    fontWeight: "500",
     color: Colors.primary,
     marginTop: 2,
   },
 
   /* WALLET STRIP */
   walletStrip: {
-    backgroundColor: '#F3F5F8',
+    backgroundColor: "#F3F5F8",
     borderRadius: 14,
     paddingVertical: 9,
     paddingHorizontal: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginTop: 14,
   },
   walletLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     flex: 1,
     marginRight: 8,
   },
@@ -696,9 +797,9 @@ const styles = StyleSheet.create({
     width: 34,
     height: 34,
     borderRadius: 10,
-    backgroundColor: '#D1F5ED',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#D1F5ED",
+    alignItems: "center",
+    justifyContent: "center",
     marginRight: 10,
   },
   walletTextContainer: {
@@ -706,30 +807,30 @@ const styles = StyleSheet.create({
   },
   walletTitle: {
     fontSize: 10,
-    fontWeight: '700',
-    color: '#4B5563',
+    fontWeight: "700",
+    color: "#4B5563",
     letterSpacing: 0.6,
   },
   walletSubtitle: {
     fontSize: 11.5,
-    color: '#6B7280',
+    color: "#6B7280",
     marginTop: 1,
   },
   reconnectButton: {
-    backgroundColor: '#E2E6EE',
+    backgroundColor: "#E2E6EE",
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius: 12,
   },
   reconnectText: {
     fontSize: 11.5,
-    fontWeight: '600',
-    color: '#1F2937',
+    fontWeight: "600",
+    color: "#1F2937",
   },
 
   /* ACTION BUTTONS */
   actionButtonsRow: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 10,
     marginTop: 14,
   },
@@ -738,25 +839,25 @@ const styles = StyleSheet.create({
     height: 44,
     borderRadius: 22,
     backgroundColor: Colors.primary,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   whatsappButton: {
     flex: 1,
     height: 44,
     borderRadius: 22,
     backgroundColor: Colors.whatsAppGreen,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
   },
   actionButtonIcon: {
     marginRight: 7,
   },
   actionButtonText: {
-    color: '#FFFFFF',
-    fontWeight: '700',
+    color: "#FFFFFF",
+    fontWeight: "700",
     fontSize: 13.5,
   },
 
@@ -766,8 +867,8 @@ const styles = StyleSheet.create({
   },
   sectionHeader: {
     fontSize: 11,
-    fontWeight: '700',
-    color: '#6B7280',
+    fontWeight: "700",
+    color: "#6B7280",
     letterSpacing: 0.8,
     marginBottom: 8,
     paddingHorizontal: 4,
@@ -780,10 +881,10 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderWidth: 1,
-    borderColor: '#EEF1F6',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    borderColor: "#EEF1F6",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     ...Shadows.subtle,
   },
 
@@ -792,39 +893,39 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.cardBackground,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#EEF1F6',
+    borderColor: "#EEF1F6",
     paddingVertical: 4,
     ...Shadows.subtle,
   },
   groupItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingVertical: 11,
     paddingHorizontal: 16,
   },
   itemLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     flex: 1,
   },
   itemIconCircle: {
     width: 34,
     height: 34,
     borderRadius: 17,
-    backgroundColor: '#F4F5F9',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#F4F5F9",
+    alignItems: "center",
+    justifyContent: "center",
     marginRight: 12,
   },
   itemTitle: {
     fontSize: 14.5,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.textPrimary,
   },
   itemRightBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 8,
   },
 
@@ -837,7 +938,7 @@ const styles = StyleSheet.create({
   },
   activeOrdersText: {
     fontSize: 11,
-    fontWeight: '600',
+    fontWeight: "600",
     color: Colors.badgeActiveText,
   },
   inboxCountBadge: {
@@ -845,13 +946,13 @@ const styles = StyleSheet.create({
     height: 19,
     borderRadius: 9.5,
     backgroundColor: Colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   inboxCountText: {
     fontSize: 11,
-    fontWeight: '700',
-    color: '#FFFFFF',
+    fontWeight: "700",
+    color: "#FFFFFF",
   },
   voucherBadge: {
     backgroundColor: Colors.badgeVoucherBg,
@@ -861,7 +962,7 @@ const styles = StyleSheet.create({
   },
   voucherText: {
     fontSize: 10.5,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.badgeVoucherText,
   },
 
@@ -880,9 +981,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.cardBackground,
     borderWidth: 1,
     borderColor: Colors.borderDefault,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 20,
     ...Shadows.subtle,
   },
@@ -891,13 +992,13 @@ const styles = StyleSheet.create({
   },
   logoutText: {
     fontSize: 15,
-    fontWeight: '700',
+    fontWeight: "700",
     color: Colors.primary,
   },
   versionText: {
     fontSize: 11.5,
     color: Colors.textMuted,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 12,
     marginBottom: 10,
   },
@@ -907,27 +1008,27 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: Colors.cardBackground,
     borderTopWidth: 1,
-    borderTopColor: '#EAECEF',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    paddingBottom: Platform.OS === 'ios' ? 4 : 2,
+    borderTopColor: "#EAECEF",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    paddingBottom: Platform.OS === "ios" ? 4 : 2,
     ...Shadows.subtle,
   },
   tabItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 4,
     flex: 1,
   },
   tabLabel: {
     fontSize: 10.5,
-    fontWeight: '600',
-    color: '#6B7280',
+    fontWeight: "600",
+    color: "#6B7280",
     marginTop: 2,
   },
   tabLabelActive: {
     color: Colors.primary,
-    fontWeight: '700',
+    fontWeight: "700",
   },
 });
