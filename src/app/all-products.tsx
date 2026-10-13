@@ -173,6 +173,12 @@ export default function AllProductsScreen() {
               key={product.id}
               style={styles.productCard}
               activeOpacity={0.9}
+              onPress={() =>
+                router.push({
+                  pathname: "/product",
+                  params: { name: product.name, price: product.price },
+                })
+              }
             >
               <View
                 style={[

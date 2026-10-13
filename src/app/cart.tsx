@@ -267,7 +267,19 @@ export default function CartScreen() {
               <View style={styles.sectionSpacing}>
                 <View style={styles.itemCard}>
                   <View style={styles.itemTop}>
-                    <View style={styles.productImageWrap}>
+                    <TouchableOpacity
+                      style={styles.productImageWrap}
+                      onPress={() =>
+                        router.push({
+                          pathname: "/product",
+                          params: {
+                            name: "Dou-color Men's Casual Business Shirt - Crisp White Stripe Edition",
+                            price: String(unitPrice),
+                          },
+                        })
+                      }
+                      activeOpacity={0.9}
+                    >
                       <Image
                         source={{ uri: productImage }}
                         style={styles.productImage}
@@ -276,11 +288,24 @@ export default function CartScreen() {
                       <View style={styles.discountBadge}>
                         <Text style={styles.discountBadgeText}>-31%</Text>
                       </View>
-                    </View>
+                    </TouchableOpacity>
                     <View style={styles.itemDetails}>
-                      <Text style={styles.productName} numberOfLines={2}>
-                        Men&apos;s casual business shirt - white
-                      </Text>
+                      <TouchableOpacity
+                        onPress={() =>
+                          router.push({
+                            pathname: "/product",
+                            params: {
+                              name: "Dou-color Men's Casual Business Shirt - Crisp White Stripe Edition",
+                              price: String(unitPrice),
+                            },
+                          })
+                        }
+                        activeOpacity={0.75}
+                      >
+                        <Text style={styles.productName} numberOfLines={2}>
+                          Men&apos;s casual business shirt - white
+                        </Text>
+                      </TouchableOpacity>
                       <View style={styles.productMetaRow}>
                         <Text style={styles.variantPill}>Size: EU XL</Text>
                         <View style={styles.stockRow}>
