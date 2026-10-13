@@ -176,3 +176,46 @@ BuyTown uses modern, crisp sans-serif typography with calibrated line heights to
 - **Security Assurance**:
   - Padlock icon + `256-bit Bank Grade Security & Encryption` in `#788497`.
 
+---
+
+## 8. Account & Profile Screen Patterns
+
+### 8.1 Header & Quick Search Bar
+- **Header Bar**:
+  - Left: 38x38px rounded square logo badge with white shopping bag + "BuyTown" and eyebrow "ACCOUNT".
+  - Right: Search icon button (`search-outline`, 21px) + 34x34px circular avatar with thin white border.
+- **Search Capsule Bar**:
+  - Height: `46px`, `borderRadius: 23px`, `backgroundColor: '#F1F3F7'`, border: `1px solid #E5E8EF`.
+  - Leading search icon, trailing microphone icon.
+
+### 8.2 User Profile Card & Wallet Strip
+- **Profile Summary**:
+  - Circular avatar (56x56px) with pinned green verified checkmark badge (`#059669`, 18x18px).
+  - Title with VIP badge ("Welcome Gideon!" + `#EEF0FF` / `#524DEB` VIP pill).
+  - Subtitle: User email in primary electric indigo (`#524DEB`).
+- **Wallet Status Sub-Card**:
+  - Soft sand/gray container (`#F3F5F8`, `borderRadius: 14px`, padding `10px 12px`).
+  - Left: Mint icon box (`#D1F5ED`) with teal wallet icon (`#0E9F6E`) + wallet status message.
+  - Right: "Reconnect" action capsule (`#E2E6EE`, text `#1F2937`).
+- **Primary Support Channels**:
+  - Live Chat pill: Full width, height `44px`, royal indigo `#524DEB` with chat bubbles icon.
+  - WhatsApp pill: Full width, height `44px`, deep WhatsApp green `#0B6B56` with WhatsApp icon.
+
+### 8.3 Grouped Navigation Cards & Badges
+- **Section Headers**: Uppercase, `11px`, bold, `#6B7280`, `letterSpacing: 0.8px` ("NEED ASSISTANCE?", "MY BUYTOWN ACCOUNT", "MY SETTINGS").
+- **Card Containers**: White card, `borderRadius: 20px`, border `1px solid #EEF1F6` with subtle ambient shadow.
+- **List Items**:
+  - Circular 34x34px light gray icon container (`#F4F5F9`) with 18px icons in `#191D2D`.
+  - Destructive action ("Close Account"): Soft red circular icon container (`#FEE2E2`) with `#DC2626` text.
+  - Trailing badges:
+    - Orders: "2 Active" (`#ECEFF4` / `#4B5563`).
+    - Inbox: Circular purple count "2" (`#524DEB` / `#FFFFFF`).
+    - Vouchers: "3 available" (`#A7F3D0` / `#065F46`).
+    - Standard chevron forward (`#8E98A8`, 16px).
+
+### 8.4 Bottom Tab Navigation
+- Fixed 4-tab docked bar (`height: 60px`, white background, `1px solid #EAECEF` top border):
+  - Home, Categories, Cart, Account.
+  - Active tab styled with vibrant electric indigo `#524DEB` icon and label.
+
+

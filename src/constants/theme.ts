@@ -40,6 +40,17 @@ export const Colors = {
   biometricPillBg: '#70E3D3',
   biometricPillText: '#0A4F46',
 
+  // Account Screen Specific
+  whatsAppGreen: '#0B6B56',
+  badgeVipBg: '#EEF0FF',
+  badgeVipText: '#524DEB',
+  badgeActiveBg: '#ECEFF4',
+  badgeActiveText: '#4B5563',
+  badgeVoucherBg: '#A7F3D0',
+  badgeVoucherText: '#065F46',
+  dangerBg: '#FEE2E2',
+  dangerText: '#DC2626',
+
   // Social Auth & Status
   socialButtonBg: '#FFFFFF',
   socialButtonBorder: '#E4E7EE',

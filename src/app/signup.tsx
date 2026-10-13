@@ -45,7 +45,7 @@ export default function SignupScreen() {
       Alert.alert('Terms Required', 'Please accept the Terms of Service and Privacy Policy to continue.');
       return;
     }
-    Alert.alert('Success', `Account created for ${fullName}! Welcome to BuyTown.`);
+    router.push('/account');
   };
 
   const handleCountryPress = () => {

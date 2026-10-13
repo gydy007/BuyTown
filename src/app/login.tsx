@@ -24,7 +24,7 @@ export default function LoginScreen() {
   const [keepSignedIn, setKeepSignedIn] = useState(true);
 
   const handleSignIn = () => {
-    Alert.alert('BuyTown', `Welcome back, ${identifier}! Loading your personalized storefront...`);
+    router.push('/account');
   };
 
   const handleClearIdentifier = () => {
