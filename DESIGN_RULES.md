@@ -134,3 +134,45 @@ BuyTown uses modern, crisp sans-serif typography with calibrated line heights to
 - **Haptics & Feedback**:
   - Buttons use subtle opacity reduction (`activeOpacity={0.85}`) and smooth scaling.
   - Page transitions follow standard Expo Router native slide/fade patterns.
+
+---
+
+## 7. Authentication & Form Patterns
+
+### 7.1 Logo Header Variants
+- **Signup Header**:
+  - 56x56px rounded square badge (`borderRadius: 18px`), royal purple gradient (`#5A55F5` to `#4942E5`) with white shopping bag icon.
+  - Eyebrow pill: `#EEF0FF` with purple shopping bag icon + `WELCOME TO BUYTOWN`.
+  - Title: `Create Your Account` (`23.5px`, bold, `#191D2D`).
+- **Login Header**:
+  - 56x56px rounded square badge (`borderRadius: 18px`), vibrant coral/orange gradient (`#FF723B` to `#EA551E`) with white shopping bag icon.
+  - Bottom-right pinned badge: 22x22px circular `#524DEB` with white lightning bolt ⚡.
+  - Eyebrow pill: `#EEF0FF` with blue dot + `FAST CHECKOUT READY`.
+  - Title: `Welcome Back!` (`23.5px`, bold, `#191D2D`).
+
+### 7.2 Form Inputs & Controls
+- **Input Fields**:
+  - Height: `50px`, `borderRadius: 14px`, `backgroundColor: '#FBFBFE'`, `borderWidth: 1px`, `borderColor: '#DCE1EB'`.
+  - Leading outline icons (User, Mail, Lock) in `#8E98A8`.
+  - Trailing action icons (Eye toggle, Clear input).
+- **Split Phone Input**:
+  - Country code capsule: `108px` wide, `#F4F5F9`, `borderRadius: 14px`, text `NG +234` + chevron icon.
+  - Phone text field: flex 1, numeric keypad.
+- **Password Strength Indicator**:
+  - 4-segment horizontal bar (`height: 4px`, `borderRadius: 2px`, `backgroundColor: '#E5E9F2'`).
+  - Active filled segments in brand primary `#524DEB`.
+- **Checkboxes**:
+  - Square checkbox (`19x19px`, `borderRadius: 5px`, `borderColor: '#CED5E3'`).
+  - Checked state: solid `#524DEB` with crisp white checkmark.
+
+### 7.3 Social Authentication & Biometrics
+- **Social Auth Row**:
+  - Google & Apple capsule buttons (`height: 48px`, `borderRadius: 24px`, `#FFFFFF` with `1px #E4E7EE` border).
+  - Authentic brand icons (Google multi-color/red `G`, Apple black silhouette).
+- **Dedicated Biometric Login Card**:
+  - Background `#F3FAF9`, border `#E0F2EF`, `borderRadius: 18px`, padding `12px`.
+  - Left: Mint badge (`#D1F5ED`) with emerald fingerprint icon (`#0E9F6E`) + descriptive copy.
+  - Right: Mint action pill (`#70E3D3`) with dark teal text `Use` + signal wave icon.
+- **Security Assurance**:
+  - Padlock icon + `256-bit Bank Grade Security & Encryption` in `#788497`.
+

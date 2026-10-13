@@ -13,6 +13,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { Colors, Shadows } from '@/constants/theme';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -21,15 +22,15 @@ export default function GetStartedScreen() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleGetStarted = () => {
-    Alert.alert('BuyTown', 'Welcome to BuyTown! Taking you to the express marketplace...');
+    router.push('/signup');
   };
 
   const handleSignIn = () => {
-    Alert.alert('Sign In', 'Navigating to account login...');
+    router.push('/login');
   };
 
   const handleSkip = () => {
-    Alert.alert('Skip', 'Skipping intro to explore catalog...');
+    router.push('/login');
   };
 
   const handleOpenTerms = () => {
