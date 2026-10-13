@@ -211,7 +211,7 @@ export default function AllProductsScreen() {
         {renderTab("Home", "home-outline", false, () => router.push("/home"))}
         {renderTab("Categories", "grid", true)}
         {renderTab("Cart", "bag-handle-outline", false, () =>
-          router.push("/home"),
+          router.push("/cart"),
         )}
         {renderTab("Account", "person-outline", false, () =>
           router.push("/account"),

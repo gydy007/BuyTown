@@ -90,12 +90,9 @@ export default function CategoriesScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.headerRow}>
-          <View style={styles.appBadge}>
-            <Ionicons name="bag-outline" size={19} color={Colors.textInverse} />
-          </View>
           <View style={styles.headerTextWrap}>
-            <Text style={styles.brandTitle}>BuyTown</Text>
-            <Text style={styles.brandCaption}>CATEGORIES</Text>
+            <Text style={styles.brandTitle}>Categories</Text>
+            <Text style={styles.brandCaption}>Browse by department</Text>
           </View>
           <TouchableOpacity style={styles.filterPill} activeOpacity={0.8}>
             <Text style={styles.filterText}>Filter</Text>
@@ -242,7 +239,7 @@ export default function CategoriesScreen() {
         {renderTab("Home", "home-outline", false, () => router.push("/home"))}
         {renderTab("Categories", "grid", true)}
         {renderTab("Cart", "bag-handle-outline", false, () =>
-          router.push("/home"),
+          router.push("/cart"),
         )}
         {renderTab("Account", "person-outline", false, () =>
           router.push("/account"),
@@ -274,18 +271,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginBottom: 18,
   },
-  appBadge: {
-    width: 42,
-    height: 42,
-    borderRadius: 13,
-    backgroundColor: Colors.primary,
-    justifyContent: "center",
-    alignItems: "center",
-    ...Shadows.subtle,
-  },
   headerTextWrap: {
     flex: 1,
-    marginLeft: 10,
   },
   brandTitle: {
     fontSize: 20,
@@ -295,10 +282,9 @@ const styles = StyleSheet.create({
   },
   brandCaption: {
     marginTop: 1,
-    fontSize: 11,
-    fontWeight: "800",
+    fontSize: 12,
+    fontWeight: "600",
     color: Colors.textMuted,
-    letterSpacing: 1.1,
   },
   filterPill: {
     backgroundColor: "#F1F3F7",

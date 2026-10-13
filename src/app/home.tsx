@@ -851,9 +851,7 @@ export default function HomeScreen() {
         {/* Tab 3: Cart */}
         <TouchableOpacity
           style={styles.tabItem}
-          onPress={() =>
-            Alert.alert("Cart", "Your BuyTown cart is ready for checkout.")
-          }
+          onPress={() => router.push("/cart")}
           activeOpacity={0.7}
         >
           <Ionicons name="bag-handle-outline" size={22} color="#6B7280" />
