@@ -45,7 +45,7 @@ export default function SignupScreen() {
       Alert.alert('Terms Required', 'Please accept the Terms of Service and Privacy Policy to continue.');
       return;
     }
-    router.push('/account');
+    router.push('/home');
   };
 
   const handleCountryPress = () => {

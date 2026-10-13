@@ -24,7 +24,7 @@ export default function LoginScreen() {
   const [keepSignedIn, setKeepSignedIn] = useState(true);
 
   const handleSignIn = () => {
-    router.push('/account');
+    router.push('/home');
   };
 
   const handleClearIdentifier = () => {

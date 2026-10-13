@@ -474,7 +474,7 @@ export default function AccountScreen() {
         {/* Tab 1: Home */}
         <TouchableOpacity
           style={styles.tabItem}
-          onPress={() => router.push('/')}
+          onPress={() => router.push('/home')}
           activeOpacity={0.7}
         >
           <Ionicons name="home-outline" size={22} color="#6B7280" />

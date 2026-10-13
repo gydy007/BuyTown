@@ -218,4 +218,44 @@ BuyTown uses modern, crisp sans-serif typography with calibrated line heights to
   - Home, Categories, Cart, Account.
   - Active tab styled with vibrant electric indigo `#524DEB` icon and label.
 
+---
+
+## 9. Home Screen & Marketplace Patterns
+
+### 9.1 Top Bar & Express Hotline
+- Express Order Hotline banner: `CALL TO ORDER: 02018883300` (`12.5px`, bold `#191D2D` with `#524DEB` number).
+- Search Capsule Bar: Height `44px`, `borderRadius: 22px`, `#EEF1F6` background with leading search icon and trailing voice search microphone.
+
+### 9.2 Promotional Hero Carousel
+- Large rounded promo card (`borderRadius: 18px`, height `175px`, Teal `#0F766E` with background render).
+- "AS LOW AS" pill badge, trust affirmations (`Quality Product`, `Free Return`), and 8 pagination dots.
+
+### 9.3 Quick Action & Service Cards
+- 3-card horizontal grid:
+  - `Call to Order` (pink `#FFE4E6`, phone icon, arrow `→`, "ORDER WITH EASE" pill).
+  - `Make Money` (white card, gold star badge, "Be your own boss").
+  - `Extra 10% off` (blue `#E0F2FE`, shopping basket icon, "at Checkout").
+
+### 9.4 Flash Sales (Crimson Module)
+- Container: Deep crimson `#9F1239` card (`borderRadius: 20px`, padding `12px`).
+- Header: Live countdown timer pill (`⏱ 07h : 37m : 12s`) with white background and red text + white arrow button `→`.
+- Product Cards: Clean white cards with product thumbnails, star ratings (`4.1 (2041)`), bold prices, original strikethrough prices, and green discount badges (`-38%`, `-18%`).
+
+### 9.5 Dark Slate Quick Navigation
+- Dark slate containers (`#374151`, `borderRadius: 18px`) for `Recently viewed` and `Based on your search` with arrow buttons and compact product preview cards.
+
+### 9.6 Category Deals (Mint Containers)
+- Soft mint containers (`#E6F8F3`, `borderRadius: 20px`) with deep emerald headers (`#065F46` / `#059669`):
+  - `Limited Stock deals` (Up to 70% Off)
+  - `Computers & Storage`
+  - `Mobile Accessories deals`
+  - `Hands, Feet & Nail Care` (Up to 80% off)
+  - `Men's Clothing - Shirts`
+- 2-column product card layout with clear typography, star ratings, and green discount tags.
+
+### 9.7 Tab Bar Consistency
+- Strict 4-tab docked bottom bar (`Home`, `Categories`, `Cart`, `Account`) mirroring the Account screen layout. Wishlist tab is removed across the entire app.
+- Floating back-to-top button (`44x44px`, `#FFFFFF`, elevated) for fast scrolling.
+
+
 

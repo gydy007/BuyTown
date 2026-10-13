@@ -30,7 +30,7 @@ export default function GetStartedScreen() {
   };
 
   const handleSkip = () => {
-    router.push('/login');
+    router.push('/home');
   };
 
   const handleOpenTerms = () => {

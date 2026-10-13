@@ -51,6 +51,15 @@ export const Colors = {
   dangerBg: '#FEE2E2',
   dangerText: '#DC2626',
 
+  // Home Page Specific
+  flashSaleBg: '#9F1239',
+  flashSaleBgAlt: '#BE123C',
+  categorySectionBg: '#E8F8F3',
+  categoryHeaderGreen: '#065F46',
+  darkCardBg: '#374151',
+  dealsOrange: '#EA580C',
+  discountBadgeGreen: '#16A34A',
+
   // Social Auth & Status
   socialButtonBg: '#FFFFFF',
   socialButtonBorder: '#E4E7EE',
